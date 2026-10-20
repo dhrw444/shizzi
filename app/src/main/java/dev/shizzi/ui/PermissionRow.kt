@@ -37,11 +37,11 @@ fun permissionRows(
     }
 }
 
-private const val SHIZUKU_RATIONALE = tr("Required for core functionality", "核心功能依赖此权限")
+private fun shizukuRationale() = tr("Required for core functionality", "核心功能依赖此权限")
 
 private fun shizukuRow(state: ShizukuState, onAct: () -> Unit) = PermissionRowState(
     title = "Shizuku",
-    rationale = SHIZUKU_RATIONALE,
+    rationale = shizukuRationale(),
     isGranted = state is ShizukuState.Ready,
     onAct = onAct,
 )

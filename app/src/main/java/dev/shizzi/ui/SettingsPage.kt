@@ -1,5 +1,7 @@
 package dev.shizzi.ui
 
+import dev.shizzi.tr
+
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Column
@@ -28,6 +30,7 @@ import androidx.compose.ui.platform.LocalContext
 import dev.shizzi.AppPermission
 import dev.shizzi.PermissionStatus
 import dev.shizzi.ShizukuState
+import dev.shizzi.LanguageChoice
 import dev.shizzi.VpnMode
 import dev.shizzi.ui.theme.AccentChoice
 import dev.shizzi.ui.theme.DesignLanguage
@@ -53,6 +56,7 @@ data class SettingsState(
     val design: DesignLanguage,
     val accent: AccentChoice,
     val customAccents: List<Int>,
+    val language: LanguageChoice,
     val isLogging: Boolean,
     val vpnMode: VpnMode,
     val isRunningDiagnostics: Boolean,
@@ -64,6 +68,7 @@ data class SettingsActions(
     val onSetDesign: (DesignLanguage) -> Unit,
     val onSetAccent: (AccentChoice) -> Unit,
     val onAddCustomAccent: (Int) -> Unit,
+    val onSetLanguage: (LanguageChoice) -> Unit,
     val onSetLogging: (Boolean) -> Unit,
     val onSetVpnMode: (VpnMode) -> Unit,
     val onOpenLog: () -> Unit,
@@ -91,7 +96,7 @@ fun SettingsPage(
 
     Column(modifier = Modifier.fillMaxSize().systemBarsPadding()) {
 
-        ScreenHeader(title = "Settings", onBack = onBack)
+        ScreenHeader(title = tr("Settings", "设置"), onBack = onBack)
 
         Column(
             modifier = Modifier
@@ -120,24 +125,26 @@ private fun settingsSections(
     actions: SettingsActions,
     toasts: ToastState,
 ): List<SettingsSectionSpec> = listOf(
-    SettingsSectionSpec("Appearance") {
+    SettingsSectionSpec(tr("Appearance", "外观")) {
         AppearanceSection(
             state = AppearanceState(
                 theme = state.theme,
                 design = state.design,
                 accent = state.accent,
                 customAccents = state.customAccents,
+                language = state.language,
             ),
             actions = AppearanceActions(
                 onSetTheme = actions.onSetTheme,
                 onSetDesign = actions.onSetDesign,
                 onSetAccent = actions.onSetAccent,
                 onAddCustomAccent = actions.onAddCustomAccent,
+                onSetLanguage = actions.onSetLanguage,
             ),
         )
     },
 
-    SettingsSectionSpec("Permissions") {
+    SettingsSectionSpec(tr("Permissions", "权限")) {
         PermissionsSection(
             state = PermissionsSectionState(
                 shizuku = state.shizuku,
@@ -148,7 +155,7 @@ private fun settingsSections(
         )
     },
 
-    SettingsSectionSpec("Advanced") {
+    SettingsSectionSpec(tr("Advanced", "高级")) {
         VpnSection(selected = state.vpnMode, onSelect = actions.onSetVpnMode)
 
         AutomationSection(
@@ -158,11 +165,11 @@ private fun settingsSections(
         )
     },
 
-    SettingsSectionSpec("Developer") {
+    SettingsSectionSpec(tr("Developer", "开发者")) {
         DeveloperSection(isLogging = state.isLogging, actions = actions)
     },
 
-    SettingsSectionSpec("About") { AboutSection() },
+    SettingsSectionSpec(tr("About", "关于")) { AboutSection() },
 )
 
 /** Staggers each section in on first composition so the page assembles itself. */
@@ -211,23 +218,23 @@ private fun Modifier.inert(isBusy: Boolean): Modifier = when {
 @Composable
 private fun DeveloperSection(isLogging: Boolean, actions: SettingsActions) {
     SettingsToggle(
-        label = SettingsText(title = "Logging"),
+        label = SettingsText(title = tr("Logging", "日志记录")),
         isChecked = isLogging,
         onCheckedChange = actions.onSetLogging,
     )
 
     SettingsAction(
-        label = SettingsText(title = "View logs"),
+        label = SettingsText(title = tr("View logs", "查看日志")),
         onClick = actions.onOpenLog,
     )
 
     SettingsAction(
-        label = SettingsText(title = "Run diagnostics"),
+        label = SettingsText(title = tr("Run diagnostics", "运行诊断")),
         onClick = actions.onRunProbes,
     )
 
     SettingsAction(
-        label = SettingsText(title = "Restart onboarding"),
+        label = SettingsText(title = tr("Restart onboarding", "重新引导")),
         onClick = actions.onRestartOnboarding,
     )
 }
@@ -243,13 +250,13 @@ private fun AboutSection() {
     )
 
     SettingsAction(
-        label = SettingsText(title = "Report a bug"),
+        label = SettingsText(title = tr("Report a bug", "问题反馈")),
         isExternal = true,
         onClick = { context.openUrl(ISSUE_URL) },
     )
 
     SettingsAction(
-        label = SettingsText(title = "Author", subtitle = "carlelieser.dev"),
+        label = SettingsText(title = tr("Author", "作者"), subtitle = "carlelieser.dev"),
         isExternal = true,
         onClick = { context.openUrl(AUTHOR_URL) },
     )

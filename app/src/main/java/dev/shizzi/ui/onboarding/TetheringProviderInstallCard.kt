@@ -1,5 +1,7 @@
 package dev.shizzi.ui.onboarding
 
+import dev.shizzi.tr
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -59,21 +61,31 @@ private fun InstallFailureDetail(reason: String) {
 }
 
 private fun titleFor(state: CompatibilityState): String = when (state) {
-    is CompatibilityState.Staged -> "Restart your phone to finish"
-    is CompatibilityState.InstallFailed -> "The module wasn't accepted"
-    else -> "Tethering module"
+    is CompatibilityState.Staged -> tr("Restart your phone to finish", "重启手机以完成")
+    is CompatibilityState.InstallFailed ->
+        tr("The module wasn't accepted", "模块未被接受")
+    else -> tr("Tethering module", "热点模块")
 }
 
 private fun bodyFor(state: CompatibilityState): String = when (state) {
-    is CompatibilityState.Installing -> "Installing the module…"
+    is CompatibilityState.Installing -> tr("Installing the module…", "正在安装模块…")
 
     is CompatibilityState.Staged ->
-        "The module is ready and will finish installing the next time your " +
-            "phone starts up. Come back here afterwards to check compatibility."
+        tr(
+            "The module is ready and will finish installing the next time your phone starts up. " +
+                "Come back here afterwards to check compatibility.",
+            "模块已就绪，将在下次手机启动时完成安装。完成后请回到此处检查兼容性。",
+        )
 
     is CompatibilityState.InstallFailed ->
-        "Your phone refused this module, which some manufacturers' builds do. " +
-            "Nothing was changed."
+        tr(
+            "Your phone refused this module, which some manufacturers' builds do. " +
+                "Nothing was changed.",
+            "你的手机拒绝了该模块，部分厂商的定制系统会这样。未做任何改动。",
+        )
 
-    else -> "The module is downloaded and verified, ready to install."
+    else -> tr(
+        "The module is downloaded and verified, ready to install.",
+        "模块已下载并校验，可以安装。",
+    )
 }

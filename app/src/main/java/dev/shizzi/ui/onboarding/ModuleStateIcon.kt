@@ -1,5 +1,7 @@
 package dev.shizzi.ui.onboarding
 
+import dev.shizzi.tr
+
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
@@ -63,9 +65,9 @@ private fun tintFor(state: CompatibilityState): Color = when (state) {
 }
 
 private fun descriptionFor(state: CompatibilityState): String = when (state) {
-    is CompatibilityState.Staged -> "Restart required"
-    is CompatibilityState.DownloadFailed -> "Download failed"
-    is CompatibilityState.InstallFailed -> "Install failed"
-    is CompatibilityState.Downloaded -> "Downloaded and verified"
-    else -> "Module available"
+    is CompatibilityState.Staged -> tr("Restart required", "需要重启")
+    is CompatibilityState.DownloadFailed -> tr("Download failed", "下载失败")
+    is CompatibilityState.InstallFailed -> tr("Install failed", "安装失败")
+    is CompatibilityState.Downloaded -> tr("Downloaded and verified", "已下载并校验")
+    else -> tr("Module available", "模块可用")
 }

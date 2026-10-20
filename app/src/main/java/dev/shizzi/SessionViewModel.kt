@@ -114,6 +114,11 @@ class SessionViewModel(application: Application) : AndroidViewModel(application)
         viewModelScope.launch { settingsStore.setDesign(design) }
     }
 
+    fun setLanguage(choice: LanguageChoice) {
+        I18n.apply(choice)
+        viewModelScope.launch { settingsStore.setLanguage(choice) }
+    }
+
     fun setAccent(accent: AccentChoice) {
         viewModelScope.launch { settingsStore.setAccent(accent) }
     }

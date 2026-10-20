@@ -1,5 +1,7 @@
 package dev.shizzi
 
+import dev.shizzi.tr
+
 import android.service.quicksettings.Tile
 
 enum class TileAction { START, STOP, OPEN_APP, NONE }
@@ -20,7 +22,7 @@ object SessionTile {
         return when (session.status) {
             UiStatus.LOADING -> TileRender(
                 state = Tile.STATE_UNAVAILABLE,
-                subtitle = if (isStopping) "Stopping…" else "Starting…",
+                subtitle = if (isStopping) tr("Stopping…", "正在停止…") else tr("Starting…", "正在启动…"),
                 action = TileAction.NONE,
             )
 
@@ -32,13 +34,13 @@ object SessionTile {
 
             UiStatus.ERROR -> TileRender(
                 state = Tile.STATE_INACTIVE,
-                subtitle = "Tap to retry",
+                subtitle = tr("Tap to retry", "点按重试"),
                 action = TileAction.START,
             )
 
             UiStatus.READY -> TileRender(
                 state = Tile.STATE_INACTIVE,
-                subtitle = "Tap to share",
+                subtitle = tr("Tap to share", "点按共享"),
                 action = TileAction.START,
             )
         }
@@ -51,15 +53,15 @@ object SessionTile {
     )
 
     private fun describe(shizuku: ShizukuState): String = when (shizuku) {
-        ShizukuState.NotInstalled -> "Shizuku not installed"
-        ShizukuState.NotRunning -> "Shizuku not running"
-        ShizukuState.PermissionRequired -> "Permission required"
+        ShizukuState.NotInstalled -> tr("Shizuku not installed", "未安装 Shizuku")
+        ShizukuState.NotRunning -> tr("Shizuku not running", "Shizuku 未运行")
+        ShizukuState.PermissionRequired -> tr("Permission required", "需要权限")
         is ShizukuState.Ready -> ""
     }
 
     private fun describeConnected(session: SessionUiState): String = when (session.clientCount) {
-        0 -> "No devices"
-        1 -> "1 device · ${Traffic.format(session.traffic.down)}"
-        else -> "${session.clientCount} devices · ${Traffic.format(session.traffic.down)}"
+        0 -> tr("No devices", "无设备")
+        1 -> tr("1 device · ${Traffic.format(session.traffic.down)}", "1 台设备 · ${Traffic.format(session.traffic.down)}")
+        else -> tr("${session.clientCount} devices · ${Traffic.format(session.traffic.down)}", "${session.clientCount} 台设备 · ${Traffic.format(session.traffic.down)}")
     }
 }

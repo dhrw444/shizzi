@@ -1,5 +1,7 @@
 package dev.shizzi.ui
 
+import dev.shizzi.tr
+
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberUpdatedState
@@ -27,11 +29,11 @@ fun ClearLogToast(
         toasts.show(
             Toast(
                 key = ToastKeys.CLEAR_LOG,
-                message = "Clear the log?",
-                detail = "This action cannot be undone.",
+                message = tr("Clear the log?", "清空日志？"),
+                detail = tr("This action cannot be undone.", "此操作无法撤销。"),
 
                 duration = ToastDuration.Indefinite,
-                action = ToastAction("Clear") {
+                action = ToastAction(tr("Clear", "清空")) {
                     isAnswered = true
                     confirm()
                 },
@@ -44,12 +46,12 @@ fun ClearLogToast(
 fun clearedToast(problem: String?): Toast = when (problem) {
     null -> Toast(
         key = ToastKeys.CLEAR_LOG,
-        message = "Log cleared",
+        message = tr("Log cleared", "日志已清空"),
     )
 
     else -> Toast(
         key = ToastKeys.CLEAR_LOG,
-        message = "Cleared this app's entries only",
+        message = tr("Cleared this app's entries only", "仅清除了本应用的记录"),
         detail = problem,
         duration = ToastDuration.Indefinite,
     )

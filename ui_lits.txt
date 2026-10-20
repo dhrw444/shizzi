@@ -1,0 +1,202 @@
+#%06X	AccentPicker.kt:54
+$DOWN_ARROW ${Traffic.format(state.traffic.down)} · 	SessionNotification.kt:61
+$UP_ARROW ${Traffic.format(state.traffic.up)}	SessionNotification.kt:62
+$clients devices	SessionNotification.kt:67
+${SessionTile.LABEL}, ${render.subtitle}	SessionTileService.kt:79
+${deviceCount(state.clientCount)} · 	SessionNotification.kt:60
+${entry.timestamp} ${entry.level.name.padEnd(5)} ${entry.message}	LogPage.kt:230
+${failure.javaClass.simpleName}: ${failure.message}	SessionTileService.kt:63
+${session.clientCount} devices · ${Traffic.format(session.traffic.down)}	SessionTile.kt:63
+1 device	SessionNotification.kt:66
+1 device · ${Traffic.format(session.traffic.down)}	SessionTile.kt:62
+About	SettingsPage.kt:170
+Accent	AccentPicker.kt:63
+Action	AutomationSetupDialog.kt:65
+Add color	ColorPickerSheet.kt:96
+Added in Android 13.	CapabilityCard.kt:119
+Advanced	SettingsPage.kt:156
+Allows tasker apps to manage Shizzi	AutomationSection.kt:37
+Always	VpnModePicker.kt:26
+Appearance	SettingsPage.kt:126
+Author	SettingsPage.kt:257
+Auto	VpnModePicker.kt:25
+Automation	AutomationSection.kt:36
+Back	IconButtons.kt:66
+Background activity	AppPermission.kt:19
+Bind to active VPN if available	VpnModePicker.kt:31
+Broadcast receiver	AutomationSetupDialog.kt:79
+CLEAR	LogPage.kt:157
+COPY $count LINES	LogPage.kt:224
+COPY 1 LINE	LogPage.kt:223
+COPY ALL	LogPage.kt:222
+Check	OnboardingFlow.kt:118
+Class	AutomationSetupDialog.kt:78
+Cleaning up…	SessionNotification.kt:32
+Clear	ClearLogToast.kt:34
+Clear the log?	ClearLogToast.kt:30
+Cleared this app's entries only	ClearLogToast.kt:52
+Color picker	ColorPickerSheet.kt:43
+Compatibility	OnboardingFlow.kt:111
+Connect to a network to download it.	TetheringProviderDownloadCard.kt:93
+Connected	SessionNotification.kt:40
+Connected · VPN	SessionNotification.kt:39
+Connected · VPN ignored	SessionNotification.kt:38
+Connecting	StatusIcon.kt:98
+Continue	OnboardingFlow.kt:102
+Copy ${field.label.lowercase()}	AutomationSetupDialog.kt:112
+Copy token	TokenCard.kt:63
+Couldn't reach the network to download the module. Reconnect and try again.	TetheringProviderDownloadCard.kt:86
+DEPRECATION	SessionTileService.kt:108
+DESELECT ALL	LogPage.kt:145
+Dark	ThemePicker.kt:54
+Default	AccentPicker.kt:52
+Design	AppearanceSection.kt:39
+Developer	SettingsPage.kt:166
+Diagnostics completed	DiagnosticsToast.kt:36
+Diagnostics failed	DiagnosticsToast.kt:49
+Download	OnboardingFlow.kt:145
+Download failed	ModuleStateIcon.kt:67
+Downloaded and verified	ModuleStateIcon.kt:69
+Downloading the module…	TetheringProviderDownloadCard.kt:83
+Enable logging	LogEmptyState.kt:67
+Exception	SessionNotification.kt:114
+Export	DiagnosticsToast.kt:40
+Extra name	AutomationSetupDialog.kt:80
+Extra value	AutomationSetupDialog.kt:81
+Failed	StatusIcon.kt:100
+Finish	OnboardingFlow.kt:114
+GRANT PERMISSION	ShizukuCard.kt:89
+Get started	OnboardingFlow.kt:67
+Getting ready…	SessionNotification.kt:32
+GitHub	SettingsPage.kt:245
+Grant	SessionToasts.kt:54
+Grant permissions	OnboardingFlow.kt:104
+Hard edges, bold borders, offset shadows	DesignPicker.kt:30
+Ignore active VPN	VpnModePicker.kt:33
+Install	OnboardingFlow.kt:130
+Install failed	ModuleStateIcon.kt:68
+Installing	OnboardingFlow.kt:133
+Installing the module…	TetheringProviderInstallCard.kt:68
+It's about 3 MB, and installing it needs one restart.	TetheringProviderDownloadCard.kt:97
+Language	AppearanceSection.kt:51
+Lets the app create the test network tunnel your hotspot traffic 	CapabilityCard.kt:114
+Lets the app route the hotspot through the test network tunnel. 	CapabilityCard.kt:118
+Light	ThemePicker.kt:53
+Log	LogPage.kt:124
+Log cleared	ClearLogToast.kt:47
+Logging	SettingsPage.kt:219
+Logging is disabled	LogEmptyState.kt:48
+Logs will appear here	LogEmptyState.kt:57
+Match system	ThemePicker.kt:52
+Material Expressive	DesignPicker.kt:26
+Module available	ModuleStateIcon.kt:70
+More options	OverflowMenu.kt:48
+NO SHIZUKU	StatusIcon.kt:122
+Neobrutalism	DesignPicker.kt:25
+Never	VpnModePicker.kt:27
+No devices	SessionTile.kt:61
+No devices connected	SessionNotification.kt:59
+No logs yet	LogEmptyState.kt:48
+Not connected	StatusIcon.kt:97
+Not installed	ShizukuCard.kt:49
+Not running	ShizukuCard.kt:99
+Not sharing	SessionNotification.kt:47
+Not supported	CapabilityCard.kt:99
+Nothing was changed.	TetheringProviderInstallCard.kt:76
+Notifications	AppPermission.kt:18
+PERMISSION NEEDED	StatusIcon.kt:124
+Package	AutomationSetupDialog.kt:77
+Permission required	SessionTile.kt:56
+Permissions	OnboardingFlow.kt:85
+Prefer test networks	CapabilityCard.kt:109
+Ready	ShizukuCard.kt:97
+Refuse connection without active VPN	VpnModePicker.kt:32
+Regenerate token	TokenCard.kt:69
+Report a bug	SettingsPage.kt:251
+Required for core functionality	PermissionRow.kt:38
+Required for external session management	AppPermission.kt:25
+Required to keep your session running	AppPermission.kt:24
+Restart	OnboardingFlow.kt:136
+Restart onboarding	SettingsPage.kt:235
+Restart required	ModuleStateIcon.kt:66
+Restart your phone to finish	TetheringProviderInstallCard.kt:62
+Retry	OnboardingFlow.kt:142
+Rootless wifi-tethering with Shizuku.	WelcomeStep.kt:47
+Rounded surfaces, tonal color, soft motion	DesignPicker.kt:31
+Run diagnostics	SettingsPage.kt:230
+Running diagnostics...	DiagnosticsToast.kt:29
+SCROLL TO BOTTOM	LogJumpBand.kt:75
+SCROLL TO TOP	LogJumpBand.kt:75
+SELECT ALL	LogPage.kt:146
+SHIZUKU OFF	StatusIcon.kt:123
+STATUS 	StatusRow.kt:102
+Send a broadcast intent with these values.	AutomationSetupDialog.kt:59
+Service	ShizukuCard.kt:48
+Session ended	SessionNotification.kt:33
+Settings	HomePage.kt:104
+Setup	AutomationSetupDialog.kt:53
+Shizuku	PermissionRow.kt:41
+Shizuku is installed but not running	SessionToasts.kt:63
+Shizuku is not installed	SessionToasts.kt:62
+Shizuku not installed	SessionTile.kt:54
+Shizuku not running	SessionTile.kt:55
+Shizuku stopped, so the session ended. The hotspot was turned off. 	SessionNotification.kt:71
+Shizzi	SessionTile.kt:15
+Shizzi needs permission from Shizuku	SessionToasts.kt:64
+Shown while a tethering session is running	SessionNotification.kt:103
+Something went wrong. Check the app for details.	SessionNotification.kt:51
+Start	CommandTabs.kt:33
+Start a session	LogEmptyState.kt:67
+Start again when you are ready.	SessionNotification.kt:72
+StartActivityAndCollapseDeprecated	SessionTileService.kt:109
+Starting	StatusRow.kt:183
+Starting…	SessionTile.kt:23
+Status	CommandTabs.kt:36
+Stop	CommandTabs.kt:34
+Stopping…	SessionTile.kt:23
+Supported	CapabilityCard.kt:92
+TUNNEL ACTIVE	StatusRow.kt:157
+Tap to retry	SessionTile.kt:35
+Tap to share	SessionTile.kt:41
+Target	AutomationSetupDialog.kt:79
+Test network API	CapabilityCard.kt:108
+Tethering module	TetheringProviderDownloadCard.kt:35
+Tethering session	SessionNotification.kt:101
+The download couldn't be verified, so nothing was installed.	TetheringProviderDownloadCard.kt:89
+The module is downloaded and verified, ready to install.	TetheringProviderInstallCard.kt:78
+The module is ready and will finish installing the next time your 	TetheringProviderInstallCard.kt:71
+The module wasn't accepted	TetheringProviderInstallCard.kt:63
+The session ended but the hotspot may still be on: $problem — 	SessionNotification.kt:74
+This action cannot be undone.	ClearLogToast.kt:31
+This device is compatible	CompatibilityVerdict.kt:40
+This device is not compatible	CompatibilityVerdict.kt:47
+Toggle	CommandTabs.kt:35
+Token	AutomationSection.kt:76
+Turning the hotspot off…	SessionNotification.kt:56
+Turning the hotspot on…	SessionNotification.kt:56
+VPN	VpnModePicker.kt:44
+VPN CONNECTED	VpnChip.kt:34
+VPN IGNORED	VpnChip.kt:34
+VPN disconnected. Session stopped to keep devices protected.	VpnWatchdog.kt:104
+Version	ShizukuCard.kt:49
+View logs	SettingsPage.kt:225
+View setup instructions	AutomationSection.kt:67
+Wallpaper	AccentPicker.kt:53
+Welcome	WelcomeStep.kt:41
+Your phone can run this app once it has a newer tethering module. 	TetheringProviderDownloadCard.kt:96
+Your phone needs the newer tethering module to route the hotspot. 	TetheringProviderDownloadCard.kt:92
+Your phone refused this module, which some manufacturers' builds do. 	TetheringProviderInstallCard.kt:75
+\n	LogPage.kt:229
+\u2191	SessionNotification.kt:117
+\u2193	SessionNotification.kt:116
+no VPN present, session is bound to $boundHandle	VpnWatchdog.kt:75
+phone starts up. Come back here afterwards to check compatibility.	TetheringProviderInstallCard.kt:72
+tethering-session	SessionNotification.kt:112
+tile could not reach the session service: 	SessionTileService.kt:62
+travels through.	CapabilityCard.kt:115
+turn it off in Settings.	SessionNotification.kt:75
+v${BuildConfig.VERSION_NAME}	StatusRow.kt:129
+vpn adopted: pinning the datapath to handle $adopted	VpnWatchdog.kt:93
+vpn replaced: handle $previous is gone, re-pinning to $adopted	VpnWatchdog.kt:94
+vpn strike $consecutiveMisses/$MISSES_BEFORE_TEARDOWN: 	VpnWatchdog.kt:74
+vpn-watchdog	VpnWatchdog.kt:37

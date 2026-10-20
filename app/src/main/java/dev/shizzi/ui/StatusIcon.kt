@@ -1,5 +1,7 @@
 package dev.shizzi.ui
 
+import dev.shizzi.tr
+
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Animatable
@@ -94,10 +96,10 @@ private fun glyphFor(status: UiStatus): ImageVector = when (status) {
 }
 
 private fun descriptionFor(status: UiStatus): String = when (status) {
-    UiStatus.READY -> "Not connected"
-    UiStatus.LOADING -> "Connecting"
-    UiStatus.CONNECTED -> "Connected"
-    UiStatus.ERROR -> "Failed"
+    UiStatus.READY -> tr("Not connected", "未连接")
+    UiStatus.LOADING -> tr("Connecting", "正在连接")
+    UiStatus.CONNECTED -> tr("Connected", "已连接")
+    UiStatus.ERROR -> tr("Failed", "失败")
 }
 
 @Composable
@@ -119,7 +121,7 @@ fun ShizukuBadge(state: ShizukuState) {
 
 private fun badgeText(state: ShizukuState): String? = when (state) {
     is ShizukuState.Ready -> null
-    is ShizukuState.NotInstalled -> "NO SHIZUKU"
-    is ShizukuState.NotRunning -> "SHIZUKU OFF"
-    is ShizukuState.PermissionRequired -> "PERMISSION NEEDED"
+    is ShizukuState.NotInstalled -> tr("NO SHIZUKU", "无 SHIZUKU")
+    is ShizukuState.NotRunning -> tr("SHIZUKU OFF", "SHIZUKU 已关闭")
+    is ShizukuState.PermissionRequired -> tr("PERMISSION NEEDED", "需要权限")
 }

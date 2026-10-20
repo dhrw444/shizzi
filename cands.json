@@ -1,0 +1,1154 @@
+{
+"not reported by the privileged process": [
+"ApexInstaller.kt",
+23
+],
+"Notifications": [
+"AppPermission.kt",
+18
+],
+"Background activity": [
+"AppPermission.kt",
+19
+],
+"Required to keep your session running": [
+"AppPermission.kt",
+24
+],
+"Required for external session management": [
+"AppPermission.kt",
+25
+],
+"automation is off; enable it in Settings › Advanced": [
+"Automation.kt",
+74
+],
+"token does not match the one set in Settings": [
+"Automation.kt",
+75
+],
+"unrecognized action": [
+"Automation.kt",
+76
+],
+"getSystemService(\\\"test_network\\\") returned an instance": [
+"CompatibilityCheck.kt",
+30
+],
+"test_network service or TestNetworkManager class unavailable": [
+"CompatibilityCheck.kt",
+31
+],
+"TetheringManager.setPreferTestNetworks resolved": [
+"CompatibilityCheck.kt",
+42
+],
+"wifi service unavailable": [
+"DownstreamControl.kt",
+70
+],
+"startTetheredHotspot accepted": [
+"DownstreamControl.kt",
+77
+],
+"startTetheredHotspot returned false": [
+"DownstreamControl.kt",
+78
+],
+"no callback": [
+"DownstreamControl.kt",
+100
+],
+"could not build StartTetheringCallback proxy": [
+"DownstreamControl.kt",
+103
+],
+"dumpsys tethering timed out; downstream state unknown": [
+"DownstreamInspector.kt",
+12
+],
+"TestNetworkManager.class": [
+"HiddenApi.kt",
+26
+],
+"Obtained via Context.getSystemService(\\\"test_network\\\"); ": [
+"HiddenApi.kt",
+30
+],
+"@TestApi, not in the SDK. Absent on trimmed OEM builds.": [
+"HiddenApi.kt",
+31
+],
+"TestNetworkManager.createTunInterface": [
+"HiddenApi.kt",
+34
+],
+"Two overloads exist, taking LinkAddress[] and ": [
+"HiddenApi.kt",
+38
+],
+"Collection<LinkAddress>. Both are probed, and both are passed ": [
+"HiddenApi.kt",
+39
+],
+"the IPv4 and IPv6 TUN addresses together.": [
+"HiddenApi.kt",
+40
+],
+"TestNetworkManager.setupTestNetwork": [
+"HiddenApi.kt",
+43
+],
+"The (LinkProperties, boolean, IBinder) overload is used so ": [
+"HiddenApi.kt",
+47
+],
+"the network carries IPv6 DNS servers, without which tethering ": [
+"HiddenApi.kt",
+48
+],
+"will not provision IPv6 downstream; falls back to ": [
+"HiddenApi.kt",
+49
+],
+"(String iface, IBinder binder). Requires MANAGE_TEST_NETWORKS, ": [
+"HiddenApi.kt",
+50
+],
+"held by shell UID 2000.": [
+"HiddenApi.kt",
+51
+],
+"TestNetworkManager.teardownTestNetwork": [
+"HiddenApi.kt",
+54
+],
+"Takes the Network returned by the availability callback.": [
+"HiddenApi.kt",
+58
+],
+"TestNetworkInterface.getFileDescriptor": [
+"HiddenApi.kt",
+61
+],
+"Returns ParcelFileDescriptor owning the TUN. This fd is ": [
+"HiddenApi.kt",
+65
+],
+"the datapath handoff point.": [
+"HiddenApi.kt",
+66
+],
+"TestNetworkInterface.getInterfaceName": [
+"HiddenApi.kt",
+69
+],
+"Yields the testtunN name matched against dumpsys output.": [
+"HiddenApi.kt",
+73
+],
+"TetheringManager.setPreferTestNetworks": [
+"HiddenApi.kt",
+76
+],
+"THE load-bearing call: without it the tethering stack never ": [
+"HiddenApi.kt",
+80
+],
+"selects the TUN. @TestApi, gated on TETHER_PRIVILEGED. Carried ": [
+"HiddenApi.kt",
+81
+],
+"by the tethering module rather than the platform, so a build ": [
+"HiddenApi.kt",
+82
+],
+"below 33 has it only if that module is new enough.": [
+"HiddenApi.kt",
+83
+],
+"WifiManager.startTetheredHotspot": [
+"HiddenApi.kt",
+86
+],
+"@SystemApi. Reaches SoftAp through WifiServiceImpl rather ": [
+"HiddenApi.kt",
+90
+],
+"than TetheringService, whose hasTetherChangePermission rejects ": [
+"HiddenApi.kt",
+91
+],
+"shell. Passing a null SoftApConfiguration uses the saved hotspot.": [
+"HiddenApi.kt",
+92
+],
+"TetheringManager.startTethering": [
+"HiddenApi.kt",
+95
+],
+"Takes (TetheringRequest, Executor, StartTetheringCallback), ": [
+"HiddenApi.kt",
+99
+],
+"all hidden. Needs TETHER_PRIVILEGED, which shell holds. No ": [
+"HiddenApi.kt",
+100
+],
+"`cmd tethering` equivalent exists, so reflection is the only path.": [
+"HiddenApi.kt",
+101
+],
+"TetheringManager.stopTethering": [
+"HiddenApi.kt",
+104
+],
+"Takes the int tethering type (0 = TETHERING_WIFI). Required ": [
+"HiddenApi.kt",
+108
+],
+"to restart the downstream so upstream selection re-runs (R4.4).": [
+"HiddenApi.kt",
+109
+],
+"The (InetAddress, int) constructor is package-private, so ": [
+"HiddenApi.kt",
+116
+],
+"the TUN address must be built reflectively.": [
+"HiddenApi.kt",
+117
+],
+"NetworkCapabilities.TRANSPORT_TEST": [
+"HiddenApi.kt",
+120
+],
+"@hide constant (value 7 on AOSP). Read reflectively rather ": [
+"HiddenApi.kt",
+124
+],
+"than hardcoded so a renumbering surfaces as a probe failure.": [
+"HiddenApi.kt",
+125
+],
+"WrongConstant": [
+"HiddenApi.kt",
+157
+],
+"Does the run release its TUN, fd, and test network?": [
+"ProbeReport.kt",
+45
+],
+"released cleanly": [
+"ProbeReport.kt",
+48
+],
+"blocked by Q0/Q1 failure": [
+"ProbeRunner.kt",
+30
+],
+"Does the privileged service run as shell (2000) or root (0)?": [
+"ProbeRunner.kt",
+64
+],
+" else if (uid == ROOT_UID) ": [
+"ProbeRunner.kt",
+66
+],
+" else ": [
+"ProbeRunner.kt",
+66
+],
+"Is TestNetworkManager reachable from this UID?": [
+"ProbeRunner.kt",
+71
+],
+"Q4pre": [
+"ProbeRunner.kt",
+107
+],
+"Can the preference be set before the TUN is created?": [
+"ProbeRunner.kt",
+108
+],
+"Q5pre": [
+"ProbeRunner.kt",
+123
+],
+"Can the downstream restart before the TUN is created?": [
+"ProbeRunner.kt",
+124
+],
+"Does createTunInterface() return a usable TUN?": [
+"ProbeRunner.kt",
+135
+],
+"Does setupTestNetwork() produce an available network?": [
+"ProbeRunner.kt",
+138
+],
+"no session resources": [
+"ProbeRunner.kt",
+150
+],
+"no test network": [
+"ProbeRunner.kt",
+167
+],
+"registerNetworkCallback rejected: ": [
+"ProbeRunner.kt",
+208
+],
+"no TUN to register": [
+"ProbeRunner.kt",
+225
+],
+"Q3b": [
+"ProbeRunner.kt",
+228
+],
+"getNetworkCapabilities returned null": [
+"ProbeRunner.kt",
+244
+],
+"setPreferTestNetworks(true) accepted": [
+"ProbeRunner.kt",
+271
+],
+"downstream restarted before TUN creation": [
+"ProbeRunner.kt",
+279
+],
+"no restart: observing the running downstream": [
+"ProbeRunner.kt",
+280
+],
+"Reported for Phase 6 planning; suppression not attempted.": [
+"ProbeRunner.kt",
+348
+],
+"Current upstream": [
+"ProbeRunner.kt",
+419
+],
+"Upstream wanted": [
+"ProbeRunner.kt",
+420
+],
+"Upstream quota": [
+"ProbeRunner.kt",
+421
+],
+"Exempted": [
+"ProbeRunner.kt",
+424
+],
+"Does the test network carry the capabilities tethering requires of an upstream?": [
+"ProbeRunner.kt",
+437
+],
+"Does a NetworkCallback listen ever deliver the test network? ": [
+"ProbeRunner.kt",
+441
+],
+"(this is what populates UpstreamNetworkMonitor.mNetworkMap)": [
+"ProbeRunner.kt",
+442
+],
+"yyyy-MM-dd HH:mm:ss.SSS": [
+"SessionLog.kt",
+27
+],
+"Cleaning up…": [
+"SessionNotification.kt",
+32
+],
+"Getting ready…": [
+"SessionNotification.kt",
+32
+],
+"Session ended": [
+"SessionNotification.kt",
+33
+],
+"Connected · VPN ignored": [
+"SessionNotification.kt",
+38
+],
+"Connected · VPN": [
+"SessionNotification.kt",
+39
+],
+"Connected": [
+"SessionNotification.kt",
+40
+],
+"Not sharing": [
+"SessionNotification.kt",
+47
+],
+"Something went wrong. Check the app for details.": [
+"SessionNotification.kt",
+51
+],
+"Turning the hotspot off…": [
+"SessionNotification.kt",
+56
+],
+"Turning the hotspot on…": [
+"SessionNotification.kt",
+56
+],
+"No devices connected": [
+"SessionNotification.kt",
+59
+],
+"1 device": [
+"SessionNotification.kt",
+66
+],
+"Shizuku stopped, so the session ended. The hotspot was turned off. ": [
+"SessionNotification.kt",
+71
+],
+"Start again when you are ready.": [
+"SessionNotification.kt",
+72
+],
+"turn it off in Settings.": [
+"SessionNotification.kt",
+75
+],
+"Stop": [
+"SessionNotification.kt",
+87
+],
+"Tethering session": [
+"SessionNotification.kt",
+101
+],
+"Shown while a tethering session is running": [
+"SessionNotification.kt",
+103
+],
+"requestKeepAlive: could not request the test network, ": [
+"SessionResources.kt",
+57
+],
+"it would be lingered away within seconds": [
+"SessionResources.kt",
+58
+],
+"startDatapath: userspace stack failed to attach to fd ": [
+"SessionResources.kt",
+71
+],
+"start failed in the app process: ": [
+"SessionService.kt",
+94
+],
+"Session ended unexpectedly — dropping the hotspot…": [
+"SessionService.kt",
+159
+],
+"orphan recovery: hotspot dropped": [
+"SessionService.kt",
+169
+],
+"stopTethering was rejected, but no downstream remains tethered": [
+"SessionTeardown.kt",
+25
+],
+"process exiting with session active; dropping downstream": [
+"SessionTeardown.kt",
+44
+],
+"the upstream stays selected and the next start may fail": [
+"SessionTeardown.kt",
+66
+],
+"Stopping…": [
+"SessionTile.kt",
+23
+],
+"Starting…": [
+"SessionTile.kt",
+23
+],
+"Tap to retry": [
+"SessionTile.kt",
+35
+],
+"Tap to share": [
+"SessionTile.kt",
+41
+],
+"Shizuku not installed": [
+"SessionTile.kt",
+54
+],
+"Shizuku not running": [
+"SessionTile.kt",
+55
+],
+"Permission required": [
+"SessionTile.kt",
+56
+],
+"No devices": [
+"SessionTile.kt",
+61
+],
+"tile could not reach the session service: ": [
+"SessionTileService.kt",
+62
+],
+"StartActivityAndCollapseDeprecated": [
+"SessionTileService.kt",
+109
+],
+"diagnostics failed in the app process: ": [
+"SessionViewModel.kt",
+159
+],
+"shell (2000) — the path under test": [
+"ShizukuGate.kt",
+81
+],
+"root (0) — Sui; behaviour may differ (P-5)": [
+"ShizukuGate.kt",
+82
+],
+"2000 (shell)": [
+"ShizukuGate.kt",
+87
+],
+"0 (root)": [
+"ShizukuGate.kt",
+88
+],
+"Stopped": [
+"TetherClient.kt",
+40
+],
+"bindUserService: Shizuku returned a null binder": [
+"TetherClient.kt",
+118
+],
+"bindUserService: Shizuku returned no binder for the privileged ": [
+"TetherClient.kt",
+154
+],
+"never started or exited before handing one back; ": [
+"TetherClient.kt",
+156
+],
+"`adb logcat -s ShizukuServiceStarter:*` carries the reason.": [
+"TetherClient.kt",
+157
+],
+"could not reach Shizuku": [
+"TetherClient.kt",
+228
+],
+"PrivateApi": [
+"TetherService.kt",
+128
+],
+"DiscouragedPrivateApi": [
+"TetherService.kt",
+128
+],
+"asShellContext: could not rebase context (package=": [
+"TetherService.kt",
+139
+],
+"not started": [
+"TetherSession.kt",
+17
+],
+"vpn mode never: datapath left unbound": [
+"TetherSession.kt",
+84
+],
+"followVpn: vpn mode always requires an active VPN, none is connected": [
+"TetherSession.kt",
+89
+],
+"downstream tethered": [
+"TetherSession.kt",
+138
+],
+"session stopped; downstream confirmed down": [
+"TetherSession.kt",
+183
+],
+"no tethering APEX resolvable via PackageManager ": [
+"TetheringModuleInfo.kt",
+24
+],
+"no build on this train carries it — the platform is out of reach without a ": [
+"TetheringModuleInfo.kt",
+35
+],
+"train upgrade": [
+"TetheringModuleInfo.kt",
+36
+],
+"train can carry setPreferTestNetworks, but whether this exact build does is ": [
+"TetheringModuleInfo.kt",
+40
+],
+"not decidable from the version — Q4 is authoritative": [
+"TetheringModuleInfo.kt",
+41
+],
+"current upstream interface(s):": [
+"UpstreamInspector.kt",
+78
+],
+"current upstream:": [
+"UpstreamInspector.kt",
+79
+],
+"selected upstream:": [
+"UpstreamInspector.kt",
+80
+],
+"upstream network:": [
+"UpstreamInspector.kt",
+81
+],
+"VPN disconnected. Session stopped to keep devices protected.": [
+"VpnWatchdog.kt",
+104
+],
+"Default": [
+"AccentPicker.kt",
+52
+],
+"Wallpaper": [
+"AccentPicker.kt",
+53
+],
+"Accent": [
+"AccentPicker.kt",
+63
+],
+"Design": [
+"AppearanceSection.kt",
+39
+],
+"Automation": [
+"AutomationSection.kt",
+36
+],
+"Allows tasker apps to manage Shizzi": [
+"AutomationSection.kt",
+37
+],
+"View setup instructions": [
+"AutomationSection.kt",
+67
+],
+"Token": [
+"AutomationSection.kt",
+76
+],
+"Setup": [
+"AutomationSetupDialog.kt",
+53
+],
+"Send a broadcast intent with these values.": [
+"AutomationSetupDialog.kt",
+59
+],
+"Action": [
+"AutomationSetupDialog.kt",
+65
+],
+"Package": [
+"AutomationSetupDialog.kt",
+77
+],
+"Class": [
+"AutomationSetupDialog.kt",
+78
+],
+"Target": [
+"AutomationSetupDialog.kt",
+79
+],
+"Broadcast receiver": [
+"AutomationSetupDialog.kt",
+79
+],
+"Extra name": [
+"AutomationSetupDialog.kt",
+80
+],
+"Extra value": [
+"AutomationSetupDialog.kt",
+81
+],
+"Clear the log?": [
+"ClearLogToast.kt",
+30
+],
+"This action cannot be undone.": [
+"ClearLogToast.kt",
+31
+],
+"Clear": [
+"ClearLogToast.kt",
+34
+],
+"Cleared this app's entries only": [
+"ClearLogToast.kt",
+52
+],
+"Color picker": [
+"ColorPickerSheet.kt",
+43
+],
+"Add color": [
+"ColorPickerSheet.kt",
+96
+],
+"Start": [
+"CommandTabs.kt",
+33
+],
+"Toggle": [
+"CommandTabs.kt",
+35
+],
+"Status": [
+"CommandTabs.kt",
+36
+],
+"Neobrutalism": [
+"DesignPicker.kt",
+25
+],
+"Material Expressive": [
+"DesignPicker.kt",
+26
+],
+"Hard edges, bold borders, offset shadows": [
+"DesignPicker.kt",
+30
+],
+"Rounded surfaces, tonal color, soft motion": [
+"DesignPicker.kt",
+31
+],
+"Running diagnostics...": [
+"DiagnosticsToast.kt",
+29
+],
+"Diagnostics completed": [
+"DiagnosticsToast.kt",
+36
+],
+"Export": [
+"DiagnosticsToast.kt",
+40
+],
+"Diagnostics failed": [
+"DiagnosticsToast.kt",
+49
+],
+"Settings": [
+"HomePage.kt",
+104
+],
+"Back": [
+"IconButtons.kt",
+66
+],
+"No logs yet": [
+"LogEmptyState.kt",
+48
+],
+"Start a session": [
+"LogEmptyState.kt",
+67
+],
+"Enable logging": [
+"LogEmptyState.kt",
+67
+],
+"SCROLL TO TOP": [
+"LogJumpBand.kt",
+75
+],
+"SCROLL TO BOTTOM": [
+"LogJumpBand.kt",
+75
+],
+"DESELECT ALL": [
+"LogPage.kt",
+145
+],
+"SELECT ALL": [
+"LogPage.kt",
+146
+],
+"COPY ALL": [
+"LogPage.kt",
+222
+],
+"COPY 1 LINE": [
+"LogPage.kt",
+223
+],
+"More options": [
+"OverflowMenu.kt",
+48
+],
+"Shizuku": [
+"PermissionRow.kt",
+41
+],
+"Grant": [
+"SessionToasts.kt",
+54
+],
+"Shizuku is not installed": [
+"SessionToasts.kt",
+62
+],
+"Shizuku is installed but not running": [
+"SessionToasts.kt",
+63
+],
+"Shizzi needs permission from Shizuku": [
+"SessionToasts.kt",
+64
+],
+"Appearance": [
+"SettingsPage.kt",
+126
+],
+"Permissions": [
+"SettingsPage.kt",
+145
+],
+"Advanced": [
+"SettingsPage.kt",
+156
+],
+"Developer": [
+"SettingsPage.kt",
+166
+],
+"About": [
+"SettingsPage.kt",
+170
+],
+"View logs": [
+"SettingsPage.kt",
+225
+],
+"Run diagnostics": [
+"SettingsPage.kt",
+230
+],
+"Restart onboarding": [
+"SettingsPage.kt",
+235
+],
+"GitHub": [
+"SettingsPage.kt",
+245
+],
+"Report a bug": [
+"SettingsPage.kt",
+251
+],
+"Author": [
+"SettingsPage.kt",
+257
+],
+"Service": [
+"ShizukuCard.kt",
+48
+],
+"Version": [
+"ShizukuCard.kt",
+49
+],
+"Not installed": [
+"ShizukuCard.kt",
+49
+],
+"GRANT PERMISSION": [
+"ShizukuCard.kt",
+89
+],
+"Ready": [
+"ShizukuCard.kt",
+97
+],
+"Not running": [
+"ShizukuCard.kt",
+99
+],
+"Not connected": [
+"StatusIcon.kt",
+97
+],
+"Connecting": [
+"StatusIcon.kt",
+98
+],
+"Failed": [
+"StatusIcon.kt",
+100
+],
+"NO SHIZUKU": [
+"StatusIcon.kt",
+122
+],
+"SHIZUKU OFF": [
+"StatusIcon.kt",
+123
+],
+"PERMISSION NEEDED": [
+"StatusIcon.kt",
+124
+],
+"STATUS ": [
+"StatusRow.kt",
+102
+],
+"TUNNEL ACTIVE": [
+"StatusRow.kt",
+157
+],
+"Starting": [
+"StatusRow.kt",
+183
+],
+"Match system": [
+"ThemePicker.kt",
+52
+],
+"Dark": [
+"ThemePicker.kt",
+54
+],
+"Copy token": [
+"TokenCard.kt",
+63
+],
+"Regenerate token": [
+"TokenCard.kt",
+69
+],
+"VPN IGNORED": [
+"VpnChip.kt",
+34
+],
+"VPN CONNECTED": [
+"VpnChip.kt",
+34
+],
+"Auto": [
+"VpnModePicker.kt",
+25
+],
+"Always": [
+"VpnModePicker.kt",
+26
+],
+"Never": [
+"VpnModePicker.kt",
+27
+],
+"Bind to active VPN if available": [
+"VpnModePicker.kt",
+31
+],
+"Refuse connection without active VPN": [
+"VpnModePicker.kt",
+32
+],
+"Ignore active VPN": [
+"VpnModePicker.kt",
+33
+],
+"English": [
+"LanguagePicker.kt",
+32
+],
+"Supported": [
+"CapabilityCard.kt",
+92
+],
+"Not supported": [
+"CapabilityCard.kt",
+99
+],
+"Test network API": [
+"CapabilityCard.kt",
+108
+],
+"Prefer test networks": [
+"CapabilityCard.kt",
+109
+],
+"travels through.": [
+"CapabilityCard.kt",
+115
+],
+"Added in Android 13.": [
+"CapabilityCard.kt",
+119
+],
+"This device is compatible": [
+"CompatibilityVerdict.kt",
+40
+],
+"This device is not compatible": [
+"CompatibilityVerdict.kt",
+47
+],
+"Restart required": [
+"ModuleStateIcon.kt",
+66
+],
+"Download failed": [
+"ModuleStateIcon.kt",
+67
+],
+"Install failed": [
+"ModuleStateIcon.kt",
+68
+],
+"Downloaded and verified": [
+"ModuleStateIcon.kt",
+69
+],
+"Module available": [
+"ModuleStateIcon.kt",
+70
+],
+"Get started": [
+"OnboardingFlow.kt",
+67
+],
+"Continue": [
+"OnboardingFlow.kt",
+102
+],
+"Grant permissions": [
+"OnboardingFlow.kt",
+104
+],
+"Compatibility": [
+"OnboardingFlow.kt",
+111
+],
+"Finish": [
+"OnboardingFlow.kt",
+114
+],
+"Check": [
+"OnboardingFlow.kt",
+118
+],
+"Install": [
+"OnboardingFlow.kt",
+130
+],
+"Installing": [
+"OnboardingFlow.kt",
+133
+],
+"Restart": [
+"OnboardingFlow.kt",
+136
+],
+"Retry": [
+"OnboardingFlow.kt",
+142
+],
+"Download": [
+"OnboardingFlow.kt",
+145
+],
+"Tethering module": [
+"TetheringProviderDownloadCard.kt",
+35
+],
+"Downloading the module…": [
+"TetheringProviderDownloadCard.kt",
+83
+],
+"Couldn't reach the network to download the module. Reconnect and try again.": [
+"TetheringProviderDownloadCard.kt",
+86
+],
+"The download couldn't be verified, so nothing was installed.": [
+"TetheringProviderDownloadCard.kt",
+89
+],
+"Your phone needs the newer tethering module to route the hotspot. ": [
+"TetheringProviderDownloadCard.kt",
+92
+],
+"Connect to a network to download it.": [
+"TetheringProviderDownloadCard.kt",
+93
+],
+"Your phone can run this app once it has a newer tethering module. ": [
+"TetheringProviderDownloadCard.kt",
+96
+],
+"It's about 3 MB, and installing it needs one restart.": [
+"TetheringProviderDownloadCard.kt",
+97
+],
+"Restart your phone to finish": [
+"TetheringProviderInstallCard.kt",
+62
+],
+"The module wasn't accepted": [
+"TetheringProviderInstallCard.kt",
+63
+],
+"Installing the module…": [
+"TetheringProviderInstallCard.kt",
+68
+],
+"The module is ready and will finish installing the next time your ": [
+"TetheringProviderInstallCard.kt",
+71
+],
+"phone starts up. Come back here afterwards to check compatibility.": [
+"TetheringProviderInstallCard.kt",
+72
+],
+"Your phone refused this module, which some manufacturers' builds do. ": [
+"TetheringProviderInstallCard.kt",
+75
+],
+"Nothing was changed.": [
+"TetheringProviderInstallCard.kt",
+76
+],
+"The module is downloaded and verified, ready to install.": [
+"TetheringProviderInstallCard.kt",
+78
+],
+"Welcome": [
+"WelcomeStep.kt",
+41
+],
+"Rootless wifi-tethering with Shizuku.": [
+"WelcomeStep.kt",
+47
+]
+}

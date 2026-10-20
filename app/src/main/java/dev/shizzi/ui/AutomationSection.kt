@@ -1,5 +1,7 @@
 package dev.shizzi.ui
 
+import dev.shizzi.tr
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
@@ -33,8 +35,8 @@ fun AutomationSection(
 ) {
     SettingsToggle(
         label = SettingsText(
-            title = "Automation",
-            subtitle = "Allows tasker apps to manage Shizzi",
+            title = tr("Automation", "自动化"),
+            subtitle = tr("Allows tasker apps to manage Shizzi", "允许 Tasker 类应用管理 Shizzi"),
         ),
         isChecked = state.isEnabled,
         onCheckedChange = actions.onSetEnabled,
@@ -64,7 +66,7 @@ private fun AutomationDetails(
 
     Column {
         SettingsAction(
-            label = SettingsText(title = "View setup instructions"),
+            label = SettingsText(title = tr("View setup instructions", "查看配置说明")),
             onClick = { isExpanded = true },
         )
 
@@ -73,7 +75,7 @@ private fun AutomationDetails(
             actions = TokenActions(
                 onCopy = {
                     clipboard.setText(AnnotatedString(state.token))
-                    toasts.show(copiedToast("Token"))
+                    toasts.show(copiedToast(tr("Token", "令牌")))
                 },
                 onRegenerate = actions.onRegenerateToken,
             ),

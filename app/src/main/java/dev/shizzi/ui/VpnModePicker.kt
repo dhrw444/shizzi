@@ -1,5 +1,7 @@
 package dev.shizzi.ui
 
+import dev.shizzi.tr
+
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -22,15 +24,15 @@ import dev.shizzi.ui.theme.ShizziTheme
 private val CheckSize = 20.dp
 
 fun vpnModeLabel(mode: VpnMode): String = when (mode) {
-    VpnMode.AUTO -> "Auto"
-    VpnMode.ALWAYS -> "Always"
-    VpnMode.NEVER -> "Never"
+    VpnMode.AUTO -> tr("Auto", "自动")
+    VpnMode.ALWAYS -> tr("Always", "始终")
+    VpnMode.NEVER -> tr("Never", "从不")
 }
 
 private fun descriptionOf(mode: VpnMode): String = when (mode) {
-    VpnMode.AUTO -> "Bind to active VPN if available"
-    VpnMode.ALWAYS -> "Refuse connection without active VPN"
-    VpnMode.NEVER -> "Ignore active VPN"
+    VpnMode.AUTO -> tr("Bind to active VPN if available", "有活动 VPN 时绑定到该 VPN")
+    VpnMode.ALWAYS -> tr("Refuse connection without active VPN", "无活动 VPN 时拒绝连接")
+    VpnMode.NEVER -> tr("Ignore active VPN", "忽略活动 VPN")
 }
 
 @Composable

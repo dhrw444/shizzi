@@ -24,8 +24,10 @@ class App : Application() {
 
     private fun applyStoredSettings() {
         CoroutineScope(Dispatchers.IO).launch {
-            val isLogging = settingsStore.settings.first().isLogging
-            SessionLog.setEnabled(isLogging)
+            val stored = settingsStore.settings.first()
+            I18n.apply(stored.language)
+
+            SessionLog.setEnabled(stored.isLogging)
 
             settingsStore.backfillTokenIfEnabled()
         }

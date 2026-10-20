@@ -1,5 +1,7 @@
 package dev.shizzi.ui
 
+import dev.shizzi.tr
+
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -22,13 +24,13 @@ import dev.shizzi.ui.theme.ShizziTheme
 private val CheckSize = 20.dp
 
 fun designLabel(design: DesignLanguage): String = when (design) {
-    DesignLanguage.NEOBRUTALISM -> "Neobrutalism"
+    DesignLanguage.NEOBRUTALISM -> tr("Neobrutalism", "新粗野主义")
     DesignLanguage.MATERIAL_EXPRESSIVE -> "Material Expressive"
 }
 
 private fun descriptionOf(design: DesignLanguage): String = when (design) {
-    DesignLanguage.NEOBRUTALISM -> "Hard edges, bold borders, offset shadows"
-    DesignLanguage.MATERIAL_EXPRESSIVE -> "Rounded surfaces, tonal color, soft motion"
+    DesignLanguage.NEOBRUTALISM -> tr("Hard edges, bold borders, offset shadows", "硬朗边角、粗描边、偏移阴影")
+    DesignLanguage.MATERIAL_EXPRESSIVE -> tr("Rounded surfaces, tonal color, soft motion", "圆润表面、色调统一、柔和动效")
 }
 
 @Composable
@@ -39,7 +41,7 @@ fun DesignPicker(
 ) {
     ThemedBottomSheet(onDismiss = onDismiss) {
         Text(
-            text = "Design",
+            text = tr("Design", "设计风格"),
             style = ShizziTheme.typography.heading,
             color = ShizziTheme.colors.onSurface,
         )

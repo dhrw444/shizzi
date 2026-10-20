@@ -1,5 +1,7 @@
 package dev.shizzi.ui.onboarding
 
+import dev.shizzi.tr
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -32,7 +34,7 @@ fun TetheringProviderDownloadCard(state: CompatibilityState, hasNetwork: Boolean
             verticalArrangement = Arrangement.spacedBy(ShizziTheme.spacing.xs),
         ) {
             Text(
-                text = "Tethering module",
+                text = tr("Tethering module", "热点模块"),
                 style = ShizziTheme.typography.subheading,
                 color = ShizziTheme.colors.onSurface,
             )
@@ -80,19 +82,31 @@ private fun FailureDetail(reason: String) {
 }
 
 private fun bodyFor(state: CompatibilityState, hasNetwork: Boolean): String = when {
-    state is CompatibilityState.Downloading -> "Downloading the module…"
+    state is CompatibilityState.Downloading -> tr("Downloading the module…", "正在下载模块…")
 
     state is CompatibilityState.DownloadFailed && state.failure.isConnectivity ->
-        "Couldn't reach the network to download the module. Reconnect and try again."
+        tr(
+            "Couldn't reach the network to download the module. Reconnect and try again.",
+            "无法连接网络下载模块，请重新连接后重试。",
+        )
 
     state is CompatibilityState.DownloadFailed ->
-        "The download couldn't be verified, so nothing was installed."
+        tr(
+            "The download couldn't be verified, so nothing was installed.",
+            "下载校验未通过，未安装任何内容。",
+        )
 
     !hasNetwork ->
-        "Your phone needs the newer tethering module to route the hotspot. " +
-            "Connect to a network to download it."
+        tr(
+            "Your phone needs the newer tethering module to route the hotspot. " +
+                "Connect to a network to download it.",
+            "你的手机需要更新版本的热点模块才能转发热点流量。请连接网络以下载该模块。",
+        )
 
     else ->
-        "Your phone can run this app once it has a newer tethering module. " +
-            "It's about 3 MB, and installing it needs one restart."
+        tr(
+            "Your phone can run this app once it has a newer tethering module. " +
+                "It's about 3 MB, and installing it needs one restart.",
+            "手机装上更新版本的热点模块后即可运行本应用。模块约 3 MB，安装后需要重启一次。",
+        )
 }

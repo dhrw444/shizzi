@@ -1,5 +1,7 @@
 package dev.shizzi.ui.onboarding
 
+import dev.shizzi.tr
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -89,14 +91,14 @@ private fun StatusMark(status: CapabilityStatus) {
 
             CapabilityStatus.SUCCESS -> Icon(
                 imageVector = Icons.Filled.Check,
-                contentDescription = "Supported",
+                contentDescription = tr("Supported", "支持"),
                 tint = colors.primary,
                 modifier = Modifier.size(MarkSize),
             )
 
             CapabilityStatus.FAILURE -> Icon(
                 imageVector = Icons.Filled.Close,
-                contentDescription = "Not supported",
+                contentDescription = tr("Not supported", "不支持"),
                 tint = colors.onSurfaceMuted,
                 modifier = Modifier.size(MarkSize),
             )
@@ -105,16 +107,20 @@ private fun StatusMark(status: CapabilityStatus) {
 }
 
 private fun titleFor(capability: Capability): String = when (capability) {
-    Capability.TEST_NETWORK -> "Test network API"
-    Capability.PREFER_TEST_NETWORKS -> "Prefer test networks"
+    Capability.TEST_NETWORK -> tr("Test network API", "测试网络 API")
+    Capability.PREFER_TEST_NETWORKS -> tr("Prefer test networks", "优先使用测试网络")
 }
 
 private fun descriptionFor(capability: Capability): String = when (capability) {
     Capability.TEST_NETWORK ->
-        "Lets the app create the test network tunnel your hotspot traffic " +
-            "travels through."
+        tr(
+            "Lets the app create the test network tunnel your hotspot traffic travels through.",
+            "允许应用创建测试网络隧道，热点流量将通过该隧道传输。",
+        )
 
     Capability.PREFER_TEST_NETWORKS ->
-        "Lets the app route the hotspot through the test network tunnel. " +
-            "Added in Android 13."
+        tr(
+            "Lets the app route the hotspot through the test network tunnel. Added in Android 13.",
+            "允许应用将热点流量经由测试网络隧道转发。需要 Android 13 及以上。",
+        )
 }

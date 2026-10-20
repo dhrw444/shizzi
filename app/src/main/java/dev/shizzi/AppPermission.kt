@@ -1,5 +1,7 @@
 package dev.shizzi
 
+import dev.shizzi.tr
+
 import android.Manifest
 import android.os.Build
 
@@ -15,14 +17,14 @@ data class PermissionStatus(
 
 val AppPermission.title: String
     get() = when (this) {
-        AppPermission.NOTIFICATIONS -> "Notifications"
-        AppPermission.BATTERY_EXEMPTION -> "Background activity"
+        AppPermission.NOTIFICATIONS -> tr("Notifications", "通知")
+        AppPermission.BATTERY_EXEMPTION -> tr("Background activity", "后台运行")
     }
 
 val AppPermission.rationale: String
     get() = when (this) {
-        AppPermission.NOTIFICATIONS -> "Required to keep your session running"
-        AppPermission.BATTERY_EXEMPTION -> "Required for external session management"
+        AppPermission.NOTIFICATIONS -> tr("Required to keep your session running", "保持会话运行需要此权限")
+        AppPermission.BATTERY_EXEMPTION -> tr("Required for external session management", "外部会话管理依赖此权限")
     }
 
 val AppPermission.manifestName: String?

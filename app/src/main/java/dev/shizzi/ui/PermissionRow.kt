@@ -1,5 +1,7 @@
 package dev.shizzi.ui
 
+import dev.shizzi.tr
+
 import dev.shizzi.AppPermission
 import dev.shizzi.PermissionStatus
 import dev.shizzi.ShizukuState
@@ -35,7 +37,7 @@ fun permissionRows(
     }
 }
 
-private const val SHIZUKU_RATIONALE = "Required for core functionality"
+private const val SHIZUKU_RATIONALE = tr("Required for core functionality", "核心功能依赖此权限")
 
 private fun shizukuRow(state: ShizukuState, onAct: () -> Unit) = PermissionRowState(
     title = "Shizuku",

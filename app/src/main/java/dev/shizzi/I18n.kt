@@ -12,7 +12,10 @@ enum class LanguageChoice {
     ;
 
     companion object {
-        fun parse(raw: String?): LanguageChoice = entries.firstOr { it.name == raw } ?: SYSTEM
+        fun parse(raw: String?): LanguageChoice {
+            for (e in entries) if (e.name == raw) return e
+            return SYSTEM
+        }
     }
 }
 

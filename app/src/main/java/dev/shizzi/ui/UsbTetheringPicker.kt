@@ -23,15 +23,24 @@ import dev.shizzi.ui.theme.ShizziTheme
 private val CheckSize = 20.dp
 
 fun usbTetheringLabel(mode: UsbTethering): String = when (mode) {
-    UsbTethering.AUTO -> "Auto"
-    UsbTethering.ALWAYS -> "Always"
-    UsbTethering.NEVER -> "Never"
+    UsbTethering.AUTO -> tr("Auto", "自动")
+    UsbTethering.ALWAYS -> tr("Always", "始终")
+    UsbTethering.NEVER -> tr("Never", "从不")
 }
 
 private fun descriptionOf(mode: UsbTethering): String = when (mode) {
-    UsbTethering.AUTO -> "Also share over USB when a cable is connected"
-    UsbTethering.ALWAYS -> "Share over USB only; requires a cable"
-    UsbTethering.NEVER -> "Share through the hotspot only"
+    UsbTethering.AUTO -> tr(
+        "Also share over USB when a cable is connected",
+        "连接数据线时同时通过 USB 共享",
+    )
+    UsbTethering.ALWAYS -> tr(
+        "Share over USB only; requires a cable",
+        "仅通过 USB 共享，需要连接数据线",
+    )
+    UsbTethering.NEVER -> tr(
+        "Share through the hotspot only",
+        "仅通过热点共享",
+    )
 }
 
 @Composable

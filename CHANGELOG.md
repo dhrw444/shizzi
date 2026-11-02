@@ -5,6 +5,28 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.5.0-cn.1] - 2026-11-02
+
+Chinese localization fork. Merges upstream 0.5.0 (USB tethering) and keeps the
+bilingual `tr()` layer working across every user-visible string.
+
+### Added
+
+- **Simplified Chinese UI.** A `Language` setting (English / 简体中文) drives
+  `tr()`, which falls back to the system locale on first launch. Covers home,
+  settings, onboarding, permissions, notifications, toasts and status tiles.
+- Chinese strings for everything upstream 0.5.0 introduced: USB tethering
+  modes and their descriptions, the "waiting for USB" notification and status
+  word, device counts, and the USB-required start failure.
+
+### Changed
+
+- Notification titles, status words and the tile subtitle now run through
+  `tr()` instead of hardcoded English, including the accessibility
+  content descriptions.
+- Theming, design-language and accent pickers, the export-report chooser title
+  and the "Couldn't open …" / "… copied" toasts are localized too.
+
 ## [0.5.0] - 2026-10-30
 
 Adds USB tethering, so a computer on a USB cable can share the same

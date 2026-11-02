@@ -13,6 +13,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import dev.shizzi.tr
 import dev.shizzi.ui.theme.MinTouchTarget
 import dev.shizzi.ui.theme.ShizziTheme
 import dev.shizzi.ui.theme.themedLabel
@@ -87,7 +88,7 @@ fun CancelButton(onClick: () -> Unit) {
         contentAlignment = Alignment.Center,
     ) {
         Text(
-            text = "CANCEL",
+            text = tr("CANCEL", "取消"),
             style = ShizziTheme.typography.label,
             color = ShizziTheme.colors.onSurfaceMuted,
         )

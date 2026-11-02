@@ -6,6 +6,7 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.seconds
+import dev.shizzi.tr
 
 @Immutable
 sealed interface ToastDuration {
@@ -40,6 +41,8 @@ object ToastKeys {
     const val CLEAR_LOG = "clear-log"
 
     const val COPY = "copy"
+
+    const val OPEN = "open"
 }
 
 class ToastState {
@@ -60,7 +63,12 @@ class ToastState {
 @Composable
 fun rememberToastState(): ToastState = remember { ToastState() }
 
+fun unopenedToast(label: String): Toast = Toast(
+    key = ToastKeys.OPEN,
+    message = tr("Couldn't open $label", "无法打开$label"),
+)
+
 fun copiedToast(label: String): Toast = Toast(
     key = ToastKeys.COPY,
-    message = "$label copied",
+    message = tr("$label copied", "$label 已复制"),
 )

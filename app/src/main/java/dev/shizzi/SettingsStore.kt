@@ -26,6 +26,7 @@ data class Settings(
     val isLogging: Boolean = true,
 
     val vpnMode: VpnMode = VpnMode.AUTO,
+    val usbTethering: UsbTethering = UsbTethering.NEVER,
 
     val language: LanguageChoice = LanguageChoice.SYSTEM,
 
@@ -85,6 +86,10 @@ class SettingsStore(private val context: Context) {
         context.dataStore.edit { it[LANGUAGE] = choice.name }
     }
 
+    suspend fun setUsbTethering(mode: UsbTethering) {
+        context.dataStore.edit { it[USB_TETHERING] = mode.name }
+    }
+
     suspend fun setOnboardingComplete(hasCompleted: Boolean) {
         context.dataStore.edit { it[ONBOARDED] = hasCompleted }
     }
@@ -115,6 +120,7 @@ internal val CUSTOM_ACCENTS = stringPreferencesKey("custom_accents")
 internal val LOGGING = booleanPreferencesKey("logging")
 internal val VPN_MODE = stringPreferencesKey("vpn_mode")
 internal val LANGUAGE = stringPreferencesKey("language")
+internal val USB_TETHERING = stringPreferencesKey("usb_tethering")
 internal val ONBOARDED = booleanPreferencesKey("onboarded")
 internal val AUTOMATION = booleanPreferencesKey("automation")
 internal val AUTOMATION_TOKEN = stringPreferencesKey("automation_token")
@@ -129,6 +135,7 @@ internal fun toSettings(preferences: Preferences) = Settings(
     isLogging = preferences[LOGGING] ?: true,
     vpnMode = parseVpnMode(preferences[VPN_MODE]),
     language = LanguageChoice.parse(preferences[LANGUAGE]),
+    usbTethering = parseUsbTethering(preferences[USB_TETHERING]),
     hasCompletedOnboarding = preferences[ONBOARDED] ?: false,
     isAutomationEnabled = preferences[AUTOMATION] ?: false,
     automationToken = preferences[AUTOMATION_TOKEN].orEmpty(),

@@ -25,7 +25,7 @@ private val CheckSize = 20.dp
 
 fun designLabel(design: DesignLanguage): String = when (design) {
     DesignLanguage.NEOBRUTALISM -> tr("Neobrutalism", "新粗野主义")
-    DesignLanguage.MATERIAL_EXPRESSIVE -> "Material Expressive"
+    DesignLanguage.MATERIAL_EXPRESSIVE -> tr("Material Expressive", "Material 表现")
 }
 
 private fun descriptionOf(design: DesignLanguage): String = when (design) {

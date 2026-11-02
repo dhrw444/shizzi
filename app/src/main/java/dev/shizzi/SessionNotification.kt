@@ -37,6 +37,7 @@ class SessionNotification(private val context: Context) {
         }
 
     private fun connectedTitle(state: SessionUiState): String = when {
+        state.isWaitingForUsb -> tr("Waiting for USB", "正在等待 USB")
         state.isVpnBypassed -> tr("Connected · VPN ignored", "已连接 · 已忽略 VPN")
         state.isVpnBound -> tr("Connected · VPN", "已连接 · VPN")
         else -> tr("Connected", "已连接")
@@ -45,6 +46,10 @@ class SessionNotification(private val context: Context) {
     private fun bodyFor(state: SessionUiState, isStopping: Boolean): String = when {
         state.lastError.isNotEmpty() -> userFacingError(state.lastError)
         state.status == UiStatus.LOADING -> loadingBody(isStopping)
+        state.isWaitingForUsb -> tr(
+            "Connect over USB within $USB_GRACE_MINUTES minutes to keep sharing",
+            "请在 $USB_GRACE_MINUTES 分钟内连接 USB 以继续共享",
+        )
         state.status == UiStatus.CONNECTED -> connectedBody(state)
         else -> tr("Not sharing", "未共享")
     }
@@ -66,7 +71,7 @@ class SessionNotification(private val context: Context) {
     }
 
     private fun deviceCount(clients: Int): String = when (clients) {
-        1 -> "1 device"
+        1 -> tr("1 device", "1 台设备")
         else -> tr("$clients devices", "$clients 台设备")
     }
 
@@ -123,5 +128,7 @@ class SessionNotification(private val context: Context) {
 
         const val DOWN_ARROW = "\u2193"
         const val UP_ARROW = "\u2191"
+
+        const val USB_GRACE_MINUTES = UsbReconnect.GIVE_UP_AFTER_MS / 60_000
     }
 }
